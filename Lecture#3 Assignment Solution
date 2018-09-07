@@ -47,7 +47,10 @@ elif oper == '**':
 elif oper == '%':
     ans = float(num1) % float(num2)
 
-print((num1 + " " + oper + " " + num2 + " = " + "{:.2f}").format(ans))
+if num1.isdigit() and num2.isdigit():
+    print((num1 + " " + oper + " " + num2 + " = " + "{:.0f}").format(ans))
+else:
+    print((num1 + " " + oper + " " + num2 + " = " + "{:.2f}").format(ans))
     
 
 ##Task-3
