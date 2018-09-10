@@ -29,16 +29,16 @@ Harry
 
 #-> How to approach such problems?
 #
-#Lets walk thorugh it step by step. 
+#Lets walk through it step by step. 
 #
-#we need first read number of strudents from the user. We know that input() does this for us.
+#we need to first read number of strudents from the user. We know that input() does this for us.
 #But it will return me a string output, so lets convert it to integer. because later I will pass this number to range function.
 
 no_of_stud = int(input())
 
 #now for each student we need to read his/her name and physics marks. So again we need to use input function for the same.
-#Now the marks can be a float number so instead of converting it to int, lets convert it to float.
-#and I will store this as a pair in a list.
+#Now the marks is a float number so instead of converting it to int, lets convert it to float.
+#and I will store this as a (name,score) pair in a list.
 
 #these 5 lines does this for us.
 marksheet = []
@@ -47,27 +47,25 @@ for i in range(no_of_stud)):
     score = float(input())
     marksheet.append([name,score])
     
-#alternate way to do this to use list comprehesion. How to do it? Remember?
+#alternate way to do this is to use list comprehesion. How to do it? Remember?
 #Lets recap it one more time. 
-#As we can see in the 5 th file marksheet is our outut list. and we want to add name and score in that list.
-#Note here, it is nested list, list withi list. Because I want to store (name, score) pairs in the list.
+#As we can see on the 5th line, marksheet is our outut list. and we want to add name and score in that list.
+#Note here, it is nested list, list within a list. Because I want to store (name, score) pairs in the list.
 
 #so list would look something like this:
 #marksheet = [[name1,score1],[name2,score2]]
 
 #as we will be using list comprehesion, and there is no filter or if condition, our task is easy.
 
-#what I will do now is read input from user for name and score and pass it to a list.
+#what I will do now is, lets read input from user for name and score and pass it to a list.
 #something like this
 #[input(), float(input())]
 
 #this first input() will read names and second input() will read score.
-
 #and I will repeat this for all students means no_of_stud time.
-
 #[input(), float(input())] for i in range(no_of_stud)
 
-#easy. right? 
+#Easy. right? 
 # Now as I want my final answer to be a list, I will enclose this within []
 #[[input(), float(input())] for i in range(no_of_stud)]
 
@@ -82,7 +80,7 @@ marksheet = [[input(), float(input())] for i in range(no_of_stud)]
 #I hope till this point it is clear. If not then go through this one more time.
 
 
-#Now lets move to next step. We need the 2nd lowest socre.
+#Now lets move to next step. We need the 2nd lowest score.
 #So lets first separate score from the marksheet list.
 
 #below for loop does that for us.
@@ -123,7 +121,7 @@ scores = [score for (name,score) in marksheet]
 # Lets say 22.45 is the lowest score, and it is possible that more than 1 students have this score. 
 #In that case reading index 1 from the list will be the lowest score only, not the 2nd lowest score.
 
-#Now, stucked again, because list doesn't have any function which removes duplicates.
+#Now, because list doesn't have any function which removes duplicates, stuck again!!
 
 #Don't worry, we have sets. 
 #Remember, sets don't allow duplicate values.Lets take help from sets now.
@@ -138,21 +136,21 @@ scores = [score for (name,score) in marksheet]
 
 #Cool. Now my list doesn't have any duplicates.
 
-#Now I am good go to sort and get the index 1 value for the 2nd highest score. 
+#Now I am good go to sort. 
 #list(set(scores)).sort()
 
-#If I use list's sort method, it will do the inplace sorting of the list. 
-#and as my intermediate result is not stored anywhere, I have no reference to this list.
-#and we know that sort() return None as output.
+#If I use list's sort method, it will do the in-place sorting of the list. 
+#and as my intermediate result is not stored anywhere, I have no reference to this list, so I cannot use this anywhere in my program.
+#sort() return None as output.
 
-#So either you save the list before sorting it like this:
+#So either you save the list before sorting it like this and then sort it:
 int_list_score = list(set(scores))
 int_list_score.sort()
 
-#or you can use sorted uilt-in function to sort the list. and it returns list as output.
+#or you can use sorted() built-in function to sort the list. and it returns list as output.
 #sorted(list(set(scores)))
 
-#now we need 2nd lowest score, so I will take the 2nd memebr from this list.
+#now we need 2nd lowest score, so I will take the 2nd member from this list.
 #Lets save this in some variable.
 second_highest = int_list_score[1]
 #Or
@@ -187,5 +185,5 @@ names.sort()
 #now lets print them.
 print(names)
 
-#or if you want to print them in single line separated by spaces, go with this:
+#or if you want to print them in multiple lines, go with this:
 print('\n'.join(names))
