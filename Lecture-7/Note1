@@ -33,7 +33,7 @@ mymodule.myfunc()       #calling method myfunc in mymodule.
 #Lets change the content of mymodule.py as below:
 def myfunc2():
     print("I am in myfin2 module")
-
+ 
 def myprint():
 	if __name__ == "__main__":
 		print("I am called directly")
