@@ -7,7 +7,7 @@ z = 'my 2nd python class'
 type(x)     # int
 type(y)     #float
 type(z)     #str
-
+ 
 # Functions with int/float
 x1 = 2
 x2 = 90
