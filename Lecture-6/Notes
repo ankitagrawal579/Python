@@ -8,7 +8,7 @@ f = lambda str1 : str1[0].lower().lower()
 #Lets test it
 first_letter('Asfsd')
 f('Assfsd')
-
+ 
 #create another lambda expression to join first letters of two strings
 f = lambda str1,str2 : str1[0].lower()+str2[0].upper()
 f('Assfsd','wqrer')
