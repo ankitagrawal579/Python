@@ -93,7 +93,7 @@ It will always start with a character (A-Z)
 Hint: you need to use '[[' and '\w' and '\d' in your pattern. Also check for start() and end().
 
 st = "X9W4B7H8"
-pattern = r"/^[[a-zA-Z][0-9]]*$/"   
+pattern = r"^[[a-zA-Z][0-9]]*$"   
 
 s = re.match(pattern,st)      
 
